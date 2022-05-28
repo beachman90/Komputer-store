@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javacript test</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="data.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand text-bg-dark" href="#">Komputer Store</a>
+      </div>
+    </nav>
+    <br />
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="first-line bg-secondary p-3 text-black bg-opacity-25">
+            <div>
+              <h1>Joe Banker</h1>
+              <div class="row">
+                <div class="col">Balance</div>
+                <div id="balance" class="col text-end">200 kr</div>
+              </div>
+              <br>
+              <div id="hidden" class="row hidden">
+                <div class="col">Outstanding loan</div>
+                <div id="loan" class="col text-end"></div>
+              </div>
+            </div>
+            <div class="d-grid gap-2">
+              <button
+                onclick="onGetLoanButtonClicked()"
+                type="button"
+                class="btn btn-primary"
+              >
+                Get a loan
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="first-line bg-secondary p-3 text-black bg-opacity-25">
+            <div>
+              <h1>Work</h1>
+              <div class="row">
+                <div class="col">Pay</div>
+                <div id="pay" class="col text-end">0 kr</div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="d-grid gap-2">
+                  <button
+                    onclick="onBankButtonClicked()"
+                    type="button"
+                    class="btn btn-warning"
+                  >
+                    Bank
+                  </button>
+                </div>
+              </div>
+              <div class="col">
+                <div class="d-grid gap-2">
+                  <button
+                    onclick="onWorkButtonClicked()"
+                    type="button"
+                    class="btn btn-success"
+                  >
+                    Work
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="first-line bg-secondary p-3 text-black bg-opacity-25">
+            <div>
+              <h1>Laptops</h1>
+              <select
+                id="laptops"
+                class="form-select"
+                aria-label="Default select example"
+                onchange="changeLaptop()"
+              >
+                <option selected>Choose laptop</option>
+              </select>
+            </div>
+            <div>
+              <h5>Features:</h5>
+              <div id="laptop-specs"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row second-line bg-opacity-25 bg-secondary data-info">
+        <div class="col p-3"><div id="laptop-image"></div></div>
+        <div class="col p-3">
+          <div>
+            <h1 id="laptop-title"></h1>
+            <p id="laptop-description"></p>
+          </div>
+        </div>
+        <div class="buy-now col p-3 bottom-align-text">
+            <div id="laptop-price"></div>
+            <button
+              onclick="onBuyNowButtonClicked()"
+              type="button"
+              class="btn btn-info"
+            >
+              Buy now
+            </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="data.js"></script>
+  </body>
+</html>
