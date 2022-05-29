@@ -5,7 +5,7 @@ let selectedLaptopPrice = 0;
 
 function onGetLoanButtonClicked() {
     if (boughtComputerSinceLastLoan === false) {
-        alert("Noe gikk feil")
+        alert("You can recieve one loan at this time, sir")
         return;
     }
 
@@ -21,9 +21,27 @@ function onGetLoanButtonClicked() {
         boughtComputerSinceLastLoan = false;
         document.getElementById("balance").innerText = balance + " kr ";
         document.getElementById("loan").innerText = loan + " kr ";
+        document.getElementById("repay-loan").classList.remove("hidden");
     }
 }
 
+function onRepayLoanButtonClicked() {
+    if (balance >= loan){
+        balance -= loan;
+        document.getElementById("balance").innerText = balance + "kr";
+        loan -= loan;
+        document.getElementById("loan").innerText = loan + " kr ";
+    } else {
+        loan -= balance;
+        document.getElementById("loan").innerText = loan + " kr ";
+        balance = 0
+        document.getElementById("balance").innerText = balance + "kr";
+    }
+    if (loan === 0){
+        document.getElementById("hidden").classList.add("hidden");
+        document.getElementById("repay-loan").classList.add("hidden");
+    }
+}
 let pay = 0;
 
 function onWorkButtonClicked() {
